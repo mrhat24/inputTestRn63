@@ -13,16 +13,13 @@ import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
-  View,
-  Text,
   StatusBar,
 } from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {TestForm} from './src/form';
 import {Provider} from 'react-redux';
 import {configureStore} from './src/redux';
-import {LocalStateForm} from './src/localStateForm';
+import {NfcView} from './src/nfc';
 
 export const store = configureStore();
 
@@ -35,8 +32,7 @@ const App = () => {
           <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
-            <TestForm />
-            <LocalStateForm />
+            <NfcView />
           </ScrollView>
         </SafeAreaView>
       </>
