@@ -3,7 +3,6 @@ import {
   AnyAction,
   applyMiddleware,
   combineReducers,
-  compose,
   createStore,
 } from 'redux';
 import {createLogger} from 'redux-logger';

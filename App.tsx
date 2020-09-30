@@ -9,40 +9,54 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  StatusBar,
-} from 'react-native';
+import {SafeAreaView, StyleSheet, ScrollView, StatusBar} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {Provider} from 'react-redux';
 import {configureStore} from './src/redux';
-import {NfcView} from './src/nfc';
+import {Tabs} from './src/shared/components/tabs';
+import {NfcWrite} from './src/shared/components/nfc/write';
+import {NfcRead} from './src/shared/components/nfc/read';
 
 export const store = configureStore();
 
 const App = () => {
   return (
     <Provider store={store}>
-      <>
-        <StatusBar barStyle="dark-content" />
-        <SafeAreaView>
-          <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-            style={styles.scrollView}>
-            <NfcView />
-          </ScrollView>
-        </SafeAreaView>
-      </>
+      <StatusBar barStyle="dark-content" />
+      <SafeAreaView>
+        <Tabs
+          tabs={[
+            {
+              title: 'read',
+              render: (
+                <ScrollView
+                  contentInsetAdjustmentBehavior="automatic"
+                  style={styles.scrollView}>
+                  <NfcRead />
+                </ScrollView>
+              ),
+            },
+            {
+              title: 'write',
+              render: (
+                <ScrollView
+                  contentInsetAdjustmentBehavior="automatic"
+                  style={styles.scrollView}>
+                  <NfcWrite />
+                </ScrollView>
+              ),
+            },
+          ]}
+        />
+      </SafeAreaView>
     </Provider>
   );
 };
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: Colors.lighter,
+    flex: 1,
   },
   engine: {
     position: 'absolute',
