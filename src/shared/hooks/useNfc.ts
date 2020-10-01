@@ -24,6 +24,7 @@ export const useNfc = (): NfcHook => {
   const cleanUp = useCallback(async () => {
     try {
       await nfcManager.cancelTechnologyRequest();
+      console.log('cleaned up');
     } catch (e) {
       console.warn(e);
     }
@@ -46,11 +47,12 @@ export const useNfc = (): NfcHook => {
   const writeTag = useCallback(
     async (str: string) => {
       try {
+        console.log(str);
         let resp = await nfcManager.requestTechnology(NfcTech.Ndef, {});
         console.log(resp);
-        console.warn(resp);
+        console.log(resp);
         let ndef = await nfcManager.getNdefMessage();
-        console.warn(ndef);
+        console.log(ndef);
         let bytes = getNdefPayload(str);
         await nfcManager.writeNdefMessage(bytes);
         Alert.alert('successfully write ndef');

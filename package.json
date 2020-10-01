@@ -10,6 +10,8 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@testing-library/react-hooks": "^3.4.2",
+    "@types/sinon": "^9.0.7",
     "final-form": "4.20.1",
     "react": "16.13.1",
     "react-final-form": "6.5.1",
@@ -20,7 +22,8 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-form": "8.3.6",
     "redux-logger": "3.0.6",
-    "redux-thunk": "2.3.0"
+    "redux-thunk": "2.3.0",
+    "sinon": "^9.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.11.6",
@@ -43,6 +46,9 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFiles": [
+      "./jest/setup.js"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
