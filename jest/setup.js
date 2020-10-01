@@ -17,7 +17,17 @@ jest.mock('react-native-nfc-manager', () => {
       getNdefMessage: jest.fn(mockPromise({ndefMessage: []})),
       writeNdefMessage: jest.fn(mockPromise()),
       cancelTechnologyRequest: jest.fn(mockPromise()),
-      setEventListener: jest.fn(),
+      setEventListener: jest.fn((event, callback) => {
+        if (event === 'NfcManagerDiscoverTag') {
+          setTimeout(() => {
+            callback({ndefMessage: []});
+          }, 100);
+        } else {
+          setTimeout(() => {
+            callback();
+          }, 1000);
+        }
+      }),
     },
     NfcEvents: {
       DiscoverTag: 'NfcManagerDiscoverTag',
