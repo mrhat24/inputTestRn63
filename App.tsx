@@ -17,7 +17,7 @@ import {configureStore} from './src/redux';
 import {Tabs} from './src/shared/components/tabs';
 import {NfcWrite} from './src/shared/components/nfc/write';
 import {NfcRead} from './src/shared/components/nfc/read';
-
+import {Camera} from './src/shared/components/camera';
 export const store = configureStore();
 
 const App = () => {
@@ -27,6 +27,16 @@ const App = () => {
       <SafeAreaView>
         <Tabs
           tabs={[
+            {
+              title: 'camera',
+              render: (
+                <ScrollView
+                  contentInsetAdjustmentBehavior="automatic"
+                  style={styles.scrollView}>
+                  <Camera />
+                </ScrollView>
+              ),
+            },
             {
               title: 'read',
               render: (

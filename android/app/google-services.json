@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "353529823469",
+    "firebase_url": "https://test-a5181.firebaseio.com",
+    "project_id": "test-a5181",
+    "storage_bucket": "test-a5181.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353529823469:android:6de8b1b56a4a8941f10ce4",
+        "android_client_info": {
+          "package_name": "com.inputtestrn63"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353529823469-r93q485k731tb7ln4lhgi188vcjr8c3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGH2JeJqSbrVwKm-0lS8rFRv6UJRFLLL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353529823469-vmr18vimdebkksofls10j4qqro4ll11n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "353529823469-21co5l25oo3rkptfhfrdu7a45riobbso.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.raisin"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
